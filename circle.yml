@@ -16,7 +16,7 @@ machine:
 dependencies:
     pre:
         #- pip install -r requirements.txt
-        - pip install -e .
+        - setup.py install
         - pip install pytest
         - pip install pytest-cov
 
