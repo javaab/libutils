@@ -1,3 +1,6 @@
+.. image:: https://circleci.com/gh/javaab/libutils/tree/master.svg?style=svg
+   :target: https://circleci.com/gh/javaab/libutils/tree/master
+
 
 libutils
 ===============================
