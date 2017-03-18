@@ -1,5 +1,4 @@
-.. image:: https://circleci.com/gh/javaab/libutils/tree/master.svg?style=svg
-   :target: https://circleci.com/gh/javaab/libutils/tree/master
+[![Circle CI](https://circleci.com/gh/javaab/libutils/tree/master.svg?style=shield)](https://circleci.com/gh/javaab/libutils/tree/master)
 
 
 libutils
