@@ -4,7 +4,7 @@ libutils
 An utility library
 
 
-The documentation can be found at: https://javaab.github.io/libutils/ 
+The documentation can be found at: https://javaab.github.io/libutils-docs/
 
 
 Installation
