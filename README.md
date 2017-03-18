@@ -2,8 +2,8 @@
 
 
 libutils
-===============================
-An utility library
+========
+A utility library
 
 
 The documentation can be found at: https://javaab.github.io/libutils-docs/
@@ -13,15 +13,16 @@ Installation
 ------------
 Install via setuptools:
 
-.. code-block:: console
+```python
     
     python setup.py install
 
-How to use
------------------------
-Add ``django_accounts`` to your configuration file (normally settings.py): 
+```
 
-.. code-block:: python
+How to use
+----------
+
+```python
 
     import libutils
-
+```
