@@ -33,7 +33,8 @@ COLORS = [
     'blue',
     'purple',
     'cyan',
-    'white'
+    'white',
+    'grey'
 ]
 
 PREFIXES = [

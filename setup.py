@@ -1,14 +1,17 @@
 from setuptools import setup
 
+from libutils import __version__
+
+
 setup(
     name="libutils",
-    version="0.1.0",
+    version=__version__,
     description="Reusable, generic utility package",
     long_description="Utility Library.",
     keywords="utilities",
-    author="James Tarball <james.tarball@gmail.com>",
-    author_email="james.tarball@gmail.com",
-    url="https://github.com/javaab/libutils",
+    author="James Tarball <james.tarball@newtonsystems.co.uk>",
+    author_email="james.tarball@newtonsystems.co.uk",
+    url="https://github.com/newtonsystems/libutils",
     license="MIT license",
     packages=["libutils"],
     zip_safe=False,
