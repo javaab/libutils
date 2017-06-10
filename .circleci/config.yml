@@ -50,6 +50,5 @@ jobs:
           command: |
               # NOTE: At the moment even no changes are packaged up into
               #       a new python devpi package
-              cd python
               ../devops/scripts/circle-upload-devpi.sh
 
