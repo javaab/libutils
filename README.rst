@@ -3,7 +3,7 @@
 
 .. image:: https://img.shields.io/github/issues/newtonsystems/libutils.svg   :target: https://github.com/newtonsystems/libutils/issues
 
-.. image:: https://coveralls.io/repos/github/newtonsystems/libutils/badge.svg:target: https://coveralls.io/github/newtonsystems/libutils
+.. image:: https://coveralls.io/repos/github/newtonsystems/libutils/badge.svg :target: https://coveralls.io/github/newtonsystems/libutils
 
 
 libutils
