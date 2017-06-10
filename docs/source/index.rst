@@ -1,9 +1,9 @@
-.. hello documentation master file, created by
+.. libutils documentation master file, created by
    sphinx-quickstart on Sat Sep 10 11:53:23 2016.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to hello's documentation!
+Welcome to libutils's documentation!
 ===========================================================
 
 .. include:: ../../README.rst
