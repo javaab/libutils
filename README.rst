@@ -19,7 +19,7 @@ Installation
 ------------
 Install via setuptools:
 
-   ::
+.. code:: python
 
     python setup.py install
 
