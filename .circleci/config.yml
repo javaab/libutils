@@ -17,6 +17,12 @@ jobs:
       - checkout
 
       - run:
+          name: Clone dev-utils repo (Development utility scripts/tools)
+          command: |
+            cd ~/
+            git clone -b $CIRCLE_BRANCH https://github.com/newtonsystems/dev-utils.git
+
+      - run:
           name: Clone devops repo (Update the submodule to the latest change)
           command: |
             cd ~/
@@ -46,6 +52,13 @@ jobs:
           name: Upload coverage results to coveralls
           command: |
             coveralls
+
+      - deploy:
+          name: Make and deploy sphinx documentation
+          command: |
+              # NOTE: At the moment even no changes are packaged up into
+              #       a new python devpi package
+              ~/dev-utils/bin/deploy_sphinx_docs.sh libutils docs/build/html/
 
       - deploy:
           name: Deploy python package to devpi 
