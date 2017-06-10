@@ -9,40 +9,40 @@ libutils package
 Submodules
 ----------
 
-libutils.colours module
------------------------
+libutils\.colours module
+------------------------
 
 .. automodule:: libutils.colours
     :members:
     :undoc-members:
     :show-inheritance:
 
-libutils.escape_codes module
-----------------------------
+libutils\.escape\_codes module
+------------------------------
 
 .. automodule:: libutils.escape_codes
     :members:
     :undoc-members:
     :show-inheritance:
 
-libutils.handlers module
-------------------------
+libutils\.handlers module
+-------------------------
 
 .. automodule:: libutils.handlers
     :members:
     :undoc-members:
     :show-inheritance:
 
-libutils.log_formatters module
-------------------------------
+libutils\.log\_formatters module
+--------------------------------
 
 .. automodule:: libutils.log_formatters
     :members:
     :undoc-members:
     :show-inheritance:
 
-libutils.log_util module
-------------------------
+libutils\.log\_util module
+--------------------------
 
 .. automodule:: libutils.log_util
     :members:
