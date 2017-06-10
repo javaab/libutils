@@ -1,7 +1,10 @@
-[![Circle CI](https://circleci.com/gh/newtonsystems/libutils/tree/master.svg?style=shield)](https://circleci.com/gh/javaab/libutils/tree/master)
 
+.. image:: https://circleci.com/gh/newtonsystems/libutils/tree/master.svg?style=shield   :target: https://circleci.com/gh/javaab/libutils/tree/master
 
 .. image:: https://img.shields.io/github/issues/newtonsystems/libutils.svg   :target: https://github.com/newtonsystems/libutils/issues
+
+.. image:: https://img.shields.io/coveralls/jekyll/jekyll.svg   :target: https://github.com/newtonsystems/libutils
+
 
 libutils
 ========
