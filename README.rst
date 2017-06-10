@@ -19,16 +19,15 @@ Installation
 ------------
 Install via setuptools:
 
-```python
-    
+   ::
+
     python setup.py install
 
-```
 
 How to use
 ----------
 
-```python
+.. code:: python
 
     import libutils
-```
+
