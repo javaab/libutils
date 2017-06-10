@@ -12,7 +12,7 @@ jobs:
     environment:
       TEST_REPORTS: /tmp/test-reports
       COVERALLS_REPO_TOKEN: ien2C1f5InnEFCI33oPei3wsn71TFvVZQ
-    working_directory: /Users/danvir/Masterbox/sideprojects/github/newtonsystems/libutils/libutils
+    working_directory: ~/libutils
     steps:
       - checkout
 
