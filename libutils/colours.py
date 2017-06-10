@@ -15,7 +15,25 @@ __all__ = (
 
 
 def colourise(colour, msg='', return_colour=None):
-    """ Generic function to colourise a message with an escape code. """
+    """
+
+    Generic function to colourise a message with an escape code..
+
+    Args:
+        colour (int): Description of arg1
+        msg (str): Description of arg2
+
+    Returns:
+        bool: Description of return value
+
+    Examples:
+        Examples should be written in doctest format, and should illustrate how
+        to use the function.
+
+        >>> print([i for i in example_generator(4)])
+        [0, 1, 2, 3]
+
+    """
     if return_colour is None:
         return colour + msg + escape_codes['reset']
     else:
