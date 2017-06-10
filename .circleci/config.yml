@@ -9,6 +9,8 @@ jobs:
   build:
     docker:
       - image: newtonsystems/tools-docker-grpc-tools:0.2.0
+    environment:
+      TEST_REPORTS: /tmp/test-reports
     working_directory: ~/libutils
     steps:
       - checkout
@@ -40,10 +42,7 @@ jobs:
       - run:
           name: Run py.test & coverage report against libutils package
           command: |
-            py.test --cov --cov-report html:/tmp/artifacts --junitxml=/tmp/artifacts/pytest/junit.xml tests/
-
-      - store_artifacts:
-          path: /tmp/artefacts
+            py.test --cov --cov-report html:${TEST_REPORTS} --junitxml=${TEST_REPORTS}/pytest/junit.xml tests/
 
       - deploy:
           name: Deploy python package to devpi 
@@ -52,3 +51,9 @@ jobs:
               #       a new python devpi package
               ~/devops/scripts/circle-upload-devpi.sh
 
+      - store_artifacts:
+          path: /tmp/artefacts
+
+      # Upload test results
+      - store_test_results:
+          path: /tmp/test-reports
