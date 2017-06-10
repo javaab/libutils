@@ -54,7 +54,7 @@ clean:
 .PHONY: html
 html:
 	@echo "Build auto-documenting files from source code"
-	sphinx-apidoc -fMT -o source ../app
+	sphinx-apidoc -fMT -o source ../libutils
 	@echo
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
