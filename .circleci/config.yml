@@ -42,6 +42,9 @@ jobs:
             pip install pytest
             pip install pytest-cov
             pip install python-coveralls
+            pip install sphinx
+            pip install sphinx_rtd_theme
+            pip install sphinx_git
 
       - run:
           name: Run py.test & coverage report against libutils package
@@ -58,7 +61,7 @@ jobs:
           command: |
               # NOTE: At the moment even no changes are packaged up into
               #       a new python devpi package
-              make html
+              pushd docs; make html ; popd
               ~/dev-utils/bin/deploy_sphinx_docs.sh libutils docs/build/html/
 
       - deploy:
