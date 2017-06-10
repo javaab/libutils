@@ -11,6 +11,7 @@ jobs:
       - image: newtonsystems/tools-docker-grpc-tools:0.2.0
     environment:
       TEST_REPORTS: /tmp/test-reports
+      COVERALLS_REPO_TOKEN: ien2C1f5InnEFCI33oPei3wsn71TFvVZQ
     working_directory: ~/libutils
     steps:
       - checkout
@@ -18,16 +19,12 @@ jobs:
       - run:
           name: Clone devops repo (Update the submodule to the latest change)
           command: |
+            cd ~/
             git clone -b $CIRCLE_BRANCH https://github.com/newtonsystems/devops.git
             cd devops
             git submodule sync
             git submodule update --init
             git submodule foreach git pull origin $CIRCLE_BRANCH
-
-      - run:
-          name: Creating Artefact Folder
-          command: |
-            mkdir /tmp/artefacts;
 
       # Install Python py.test tools. (TODO: Skip download if already in cache.)
       - run:
@@ -38,11 +35,17 @@ jobs:
             pip install -e .
             pip install pytest
             pip install pytest-cov
+            pip install python-coveralls
 
       - run:
           name: Run py.test & coverage report against libutils package
           command: |
             py.test --cov --cov-report html:${TEST_REPORTS} --junitxml=${TEST_REPORTS}/pytest/junit.xml tests/
+
+      - deploy:
+          name: Upload coverage results to coveralls
+          command: |
+            coveralls
 
       - deploy:
           name: Deploy python package to devpi 
@@ -51,9 +54,7 @@ jobs:
               #       a new python devpi package
               ~/devops/scripts/circle-upload-devpi.sh
 
-      - store_artifacts:
-          path: /tmp/artefacts
-
       # Upload test results
       - store_test_results:
           path: /tmp/test-reports
+
