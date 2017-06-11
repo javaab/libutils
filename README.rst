@@ -1,6 +1,6 @@
 
 .. image:: https://circleci.com/gh/newtonsystems/libutils/tree/master.svg?style=shield
-     :target: https://circleci.com/gh/javaab/libutils/tree/master
+     :target: https://circleci.com/gh/newtonsystems/libutils/tree/master
 
 .. image:: https://img.shields.io/github/issues/newtonsystems/libutils.svg
      :target: https://github.com/newtonsystems/libutils/issues
