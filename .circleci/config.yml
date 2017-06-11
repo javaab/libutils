@@ -45,11 +45,22 @@ jobs:
             pip install sphinx
             pip install sphinx_rtd_theme
             pip install sphinx_git
+            pip install pylint
+
+      - run:
+          name: Creating artifacts folder
+          command: |
+            mkdir /tmp/artifacts;
 
       - run:
           name: Run py.test & coverage report against libutils package
           command: |
             py.test --cov --cov-report html:${TEST_REPORTS} --junitxml=${TEST_REPORTS}/pytest/junit.xml tests/
+
+      - run:
+          name: Run linter
+          command: |
+            pylint -r y --output-format=colorized --load-plugins=pylint.extensions.check_docs libutils > /tmp/artifacts/lint
 
       - deploy:
           name: Upload coverage results to coveralls
@@ -74,4 +85,10 @@ jobs:
       # Upload test results
       - store_test_results:
           path: /tmp/test-reports
+
+      - store_artifacts:
+          path: /tmp/artifacts
+
+
+
 
