@@ -12,6 +12,7 @@ jobs:
     environment:
       TEST_REPORTS: /tmp/test-reports
       COVERALLS_REPO_TOKEN: ien2C1f5InnEFCI33oPei3wsn71TFvVZQ
+      CC_TEST_REPORTER_ID: d25f67d317327459d14dca522099c332c71ecaa6344cef14b04445bbf4686e9c
     working_directory: ~/libutils
     steps:
       - checkout
@@ -21,6 +22,12 @@ jobs:
           command: |
             cd ~/
             git clone -b $CIRCLE_BRANCH https://github.com/newtonsystems/dev-utils.git
+
+      - run:
+          name: Install code climate Support
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
 
       - run:
           name: Clone devops repo (Update the submodule to the latest change)
@@ -55,7 +62,8 @@ jobs:
       - run:
           name: Run py.test & coverage report against libutils package
           command: |
-            py.test --cov --cov-report html:${TEST_REPORTS} --junitxml=${TEST_REPORTS}/pytest/junit.xml tests/
+            cc-test-reporter before-build
+            py.test --cov --cov-report html:${TEST_REPORTS} --junitxml=${TEST_REPORTS}/pytest/junit.xml tests/ ; cc-test-reporter after-build --exit-code $?
 
       - run:
           name: Run linter
