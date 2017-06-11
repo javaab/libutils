@@ -63,13 +63,8 @@ jobs:
           name: Run py.test & coverage report against libutils package
           command: |
             ./cc-test-reporter before-build
-            py.test --cov --cov-report html:${TEST_REPORTS} --junitxml=${TEST_REPORTS}/pytest/junit.xml tests/
+            coverage html
             ./cc-test-reporter after-build --exit-code $?
-
-      - run:
-          name: Run linter
-          command: |
-            pylint -r y --output-format=colorized --load-plugins=pylint.extensions.check_docs libutils > /tmp/artifacts/lint || true
 
       - deploy:
           name: Upload coverage results to coveralls
@@ -94,9 +89,6 @@ jobs:
       # Upload test results
       - store_test_results:
           path: /tmp/test-reports
-
-      - store_artifacts:
-          path: /tmp/artifacts
 
 
 
