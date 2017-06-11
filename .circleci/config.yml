@@ -24,12 +24,6 @@ jobs:
             git clone -b $CIRCLE_BRANCH https://github.com/newtonsystems/dev-utils.git
 
       - run:
-          name: Install code climate Support
-          command: |
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-            chmod +x ./cc-test-reporter
-
-      - run:
           name: Clone devops repo (Update the submodule to the latest change)
           command: |
             cd ~/
@@ -53,6 +47,7 @@ jobs:
             pip install sphinx_rtd_theme
             pip install sphinx_git
             pip install pylint
+            pip install codeclimate-test-reporter
 
       - run:
           name: Creating artifacts folder
@@ -62,9 +57,7 @@ jobs:
       - run:
           name: Run py.test & coverage report against libutils package
           command: |
-            ./cc-test-reporter before-build
-            coverage html
-            ./cc-test-reporter after-build --exit-code $?
+            py.test --cov --cov-report html:${TEST_REPORTS} --junitxml=${TEST_REPORTS}/pytest/junit.xml tests/
 
       - deploy:
           name: Upload coverage results to coveralls
