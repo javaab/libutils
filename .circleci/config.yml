@@ -46,7 +46,6 @@ jobs:
             pip install sphinx
             pip install sphinx_rtd_theme
             pip install sphinx_git
-            pip install pylint
             pip install codeclimate-test-reporter
 
       - run:
