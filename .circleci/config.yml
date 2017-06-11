@@ -67,7 +67,7 @@ jobs:
       - deploy:
           name: Upload coverage results to code climate
           command: |
-            codeclimate-test-reporter
+            codeclimate-test-reporter --token ${CODECLIMATE_REPO_TOKEN}
 
       - deploy:
           name: Deploy python package to devpi 
