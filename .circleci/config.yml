@@ -70,19 +70,19 @@ jobs:
             codeclimate-test-reporter
 
       - deploy:
-          name: Make and deploy sphinx documentation
-          command: |
-              # NOTE: At the moment even no changes are packaged up into
-              #       a new python devpi package
-              pushd docs; make html ; popd
-              ~/dev-utils/bin/deploy_sphinx_docs.sh libutils docs/build/html/
-
-      - deploy:
           name: Deploy python package to devpi 
           command: |
               # NOTE: At the moment even no changes are packaged up into
               #       a new python devpi package
               ~/devops/scripts/circle-upload-devpi.sh
+
+      - deploy:
+          name: Make and deploy sphinx documentation (after deployment of devpi - as changed version)
+          command: |
+              # NOTE: At the moment even no changes are packaged up into
+              #       a new python devpi package
+              pushd docs; make html ; popd
+              ~/dev-utils/bin/deploy_sphinx_docs.sh libutils docs/build/html/
 
       # Upload test results
       - store_test_results:
