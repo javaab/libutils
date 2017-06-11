@@ -60,7 +60,7 @@ jobs:
       - run:
           name: Run linter
           command: |
-            pylint -r y --output-format=colorized --load-plugins=pylint.extensions.check_docs libutils > /tmp/artifacts/lint
+            pylint -r y --output-format=parseable --load-plugins=pylint.extensions.check_docs libutils > /tmp/artifacts/lint || true
 
       - deploy:
           name: Upload coverage results to coveralls
