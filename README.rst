@@ -8,6 +8,14 @@
 .. image:: https://coveralls.io/repos/github/newtonsystems/libutils/badge.svg
      :target: https://coveralls.io/github/newtonsystems/libutils
 
+.. image:: https://codeclimate.com/github/newtonsystems/libutils/badges/gpa.svg
+   :target: https://codeclimate.com/github/newtonsystems/libutils
+   :alt: Code Climate Badge
+
+.. image:: https://codeclimate.com/github/newtonsystems/libutils/badges/coverage.svg
+   :target: https://codeclimate.com/github/newtonsystems/libutils/coverage
+   :alt: Test Coverage Badge
+
 
 libutils
 ========
