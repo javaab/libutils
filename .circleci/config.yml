@@ -63,7 +63,8 @@ jobs:
           name: Run py.test & coverage report against libutils package
           command: |
             ./cc-test-reporter before-build
-            py.test --cov --cov-report html:${TEST_REPORTS} --junitxml=${TEST_REPORTS}/pytest/junit.xml tests/ ; ./cc-test-reporter after-build --exit-code $?
+            py.test --cov --cov-report html:${TEST_REPORTS} --junitxml=${TEST_REPORTS}/pytest/junit.xml tests/
+            ./cc-test-reporter after-build --exit-code $?
 
       - run:
           name: Run linter
