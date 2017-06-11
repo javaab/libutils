@@ -65,6 +65,11 @@ jobs:
             coveralls
 
       - deploy:
+          name: Upload coverage results to code climate
+          command: |
+            codeclimate-test-reporter
+
+      - deploy:
           name: Make and deploy sphinx documentation
           command: |
               # NOTE: At the moment even no changes are packaged up into
