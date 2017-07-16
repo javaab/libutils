@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.1.118
+                0.1.123
               </div>
             
           
@@ -257,7 +257,7 @@ Uses colorama as an optional dependancy to support color on Windows</p>
 <span id="libutils-handlers-module"></span><h2>libutils.handlers module<a class="headerlink" href="#module-libutils.handlers" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="libutils.handlers.GenRotatingFileHandler">
-<em class="property">class </em><code class="descclassname">libutils.handlers.</code><code class="descname">GenRotatingFileHandler</code><span class="sig-paren">(</span><em>base_filename</em>, <em>suffix_filename=”</em>, <em>when=’H’</em>, <em>encoding=None</em>, <em>log_name_format=None</em>, <em>log_time_format={}</em><span class="sig-paren">)</span><a class="headerlink" href="#libutils.handlers.GenRotatingFileHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">libutils.handlers.</code><code class="descname">GenRotatingFileHandler</code><span class="sig-paren">(</span><em>base_filename</em>, <em>suffix_filename=''</em>, <em>when='H'</em>, <em>encoding=None</em>, <em>log_name_format=None</em>, <em>log_time_format={}</em><span class="sig-paren">)</span><a class="headerlink" href="#libutils.handlers.GenRotatingFileHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">logging.handlers.BaseRotatingHandler</span></code></p>
 <p>From lib/geneity/lib/LoggingHandlers</p>
 <p>Handler for logging to a file, rotating the log file at certain timed
@@ -312,7 +312,7 @@ the method siguratures are the same</p>
 <p>The ColoredFormatter class.</p>
 <dl class="class">
 <dt id="libutils.log_formatters.ColoredFormatter">
-<em class="property">class </em><code class="descclassname">libutils.log_formatters.</code><code class="descname">ColoredFormatter</code><span class="sig-paren">(</span><em>fmt=None</em>, <em>datefmt=None</em>, <em>style=’%’</em>, <em>log_colors=None</em>, <em>reset=True</em>, <em>secondary_log_colors=None</em><span class="sig-paren">)</span><a class="headerlink" href="#libutils.log_formatters.ColoredFormatter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">libutils.log_formatters.</code><code class="descname">ColoredFormatter</code><span class="sig-paren">(</span><em>fmt=None</em>, <em>datefmt=None</em>, <em>style='%'</em>, <em>log_colors=None</em>, <em>reset=True</em>, <em>secondary_log_colors=None</em><span class="sig-paren">)</span><a class="headerlink" href="#libutils.log_formatters.ColoredFormatter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/logging.html#logging.Formatter" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">logging.Formatter</span></code></a></p>
 <p>A formatter that allows colors to be placed in the format string.</p>
 <p>Intended to help in creating more readable logging output.</p>
@@ -332,7 +332,7 @@ the method siguratures are the same</p>
 
 <dl class="class">
 <dt id="libutils.log_formatters.LevelFormatter">
-<em class="property">class </em><code class="descclassname">libutils.log_formatters.</code><code class="descname">LevelFormatter</code><span class="sig-paren">(</span><em>fmt=None</em>, <em>datefmt=None</em>, <em>style=’%’</em>, <em>log_colors=None</em>, <em>reset=True</em>, <em>secondary_log_colors=None</em><span class="sig-paren">)</span><a class="headerlink" href="#libutils.log_formatters.LevelFormatter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">libutils.log_formatters.</code><code class="descname">LevelFormatter</code><span class="sig-paren">(</span><em>fmt=None</em>, <em>datefmt=None</em>, <em>style='%'</em>, <em>log_colors=None</em>, <em>reset=True</em>, <em>secondary_log_colors=None</em><span class="sig-paren">)</span><a class="headerlink" href="#libutils.log_formatters.LevelFormatter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#libutils.log_formatters.ColoredFormatter" title="libutils.log_formatters.ColoredFormatter"><code class="xref py py-class docutils literal"><span class="pre">libutils.log_formatters.ColoredFormatter</span></code></a></p>
 <p>An extension of ColoredFormatter that uses per-level format strings.</p>
 <dl class="method">
